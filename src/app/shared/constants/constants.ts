@@ -18,7 +18,6 @@ export class Constants {
   static readonly PAGINATION_NEXT_A11Y = 'Next button';
   static readonly PAGINATION_PREVIOUS = '<';
   static readonly PAGINATION_PREVIOUS_A11Y = 'Previous button';
-  static readonly INPUT_FORM_HIDDEN_TEXT_A11Y = '<';
   static readonly INPUT_FORM_INPUT_PLACEHOLDER = 'Add bookmarks…';
   static readonly INPUT_FORM_ADD_A11Y = 'Add URL';
   static readonly INPUT_FORM_UPDATE_A11Y = 'URL update';

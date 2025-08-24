@@ -1,44 +1,50 @@
 @use 'theme' as *;
 
-.input-form {
-  display: flex;
-  gap: 12px;
+.container {
   width: 100%;
 
-  .visually-hidden {
-    display: none;
+  .input-form {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+
+    .visually-hidden {
+      display: none;
+    }
+
+    .input-url {
+      min-width: 200px;
+      max-width: 300px;
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px $crimson-filter;
+      }
+      &::placeholder {
+        color: $grey-medium;
+      }
+    }
+
+    button {
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &.disabled {
+        cursor: not-allowed;
+      }
+    }
   }
 
-  input {
-    width: 300px;
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 0 2px $crimson-filter;
-    }
-    &::placeholder {
-      color: $grey-medium;
-    }
+  .error-messages {
+    position: absolute;
+    font-size: $font-size-small;
+    margin-top: 4px;
+    color: $text-color-error;
   }
-
-  button {
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-
-    &.disabled {
-      cursor: not-allowed;
-    }
-  }
-}
-
-.error-messages {
-  position: absolute;
-  font-size: $font-size-small;
-  margin-top: 4px;
-  color: $text-color-error;
 }

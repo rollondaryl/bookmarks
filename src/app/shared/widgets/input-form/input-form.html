@@ -1,17 +1,17 @@
-<section>
+<section class="container">
   <div class="input-form">
-    <label for="url" class="visually-hidden">{{ constants.INPUT_FORM_HIDDEN_TEXT_A11Y }}</label>
     <input
       id="url"
+      class="input-url"
       type="text"
-      placeholder={{constants.INPUT_FORM_INPUT_PLACEHOLDER}}
+      placeholder="{{ constants.INPUT_FORM_INPUT_PLACEHOLDER }}"
       [formControl]="item"
       value="selectedItem()"
     />
     @if(!this.isEditMode()){
     <button
       [class.disabled]="item.invalid"
-      aria-label={{constants.INPUT_FORM_ADD_A11Y}}
+      aria-label="{{ constants.INPUT_FORM_ADD_A11Y }}"
       class="input-button"
       type="button"
       [disabled]="item.invalid"
@@ -23,7 +23,7 @@
     <button
       [class.disabled]="item.invalid"
       class="input-button"
-      aria-label={{constants.INPUT_FORM_UPDATE_A11Y}}
+      aria-label="{{ constants.INPUT_FORM_UPDATE_A11Y }}"
       type="button"
       [disabled]="item.invalid"
       (click)="onClickUpdate()"
@@ -32,7 +32,7 @@
     </button>
     <button
       class="input-button"
-      aria-label={{constants.INPUT_FORM_CANCEL_A11Y}}
+      aria-label="{{ constants.INPUT_FORM_CANCEL_A11Y }}"
       type="button"
       (click)="onClickCancel()"
     >
