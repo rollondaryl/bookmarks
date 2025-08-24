@@ -1,0 +1,33 @@
+@if (items().length === 0) {
+<p aria-live="polite">{{ emptyMessage() }}</p>
+} @else {
+<ul class="list">
+  @for (item of items(); track item) {
+  <li class="item">
+    <div class="row">
+      @if(selectedItem() === item) {
+      <app-input-form
+        [items]="items()"
+        [selectedItem]="item"
+        [buttonText]="constants.UPDATE"
+        (onClickUpdateEvent)="onUpdate($event)"
+        (onClickCancelEvent)="onCancel()"
+      />
+      }@else {
+      <span class="url">{{ item.url }}</span>
+      } @if(selectedItem() !== item) {
+      <div class="actions">
+        <button type="button" class="icon" aria-label={{constants.LIST_SELECT_A11Y}} (click)="onSelect(item)">
+          <img src="/images/edit.svg" class="icon" alt="" />
+        </button>
+
+        <button type="button" class="icon" aria-label={{constants.LIST_DELETE_A11Y}} (click)="onDelete(item)">
+          <img src="/images/delete.svg" class="icon" alt="" />
+        </button>
+      </div>
+      }
+    </div>
+  </li>
+  }
+</ul>
+}

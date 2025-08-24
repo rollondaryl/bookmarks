@@ -1,0 +1,51 @@
+@use 'theme' as *;
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  margin: 12px 0 16px;
+  gap: 8px;
+
+  .item {
+    list-style: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    color: $grey-dark;
+    background-color: $grey-light;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: $grey-dark;
+      color: $text-color-white;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .url {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-right: 10px;
+      }
+
+      .actions {
+        display: flex;
+        gap: 4px;
+
+        .icon {
+          padding: 4px;
+          cursor: pointer;
+
+          img {
+            height: 12px;
+          }
+        }
+      }
+    }
+  }
+}

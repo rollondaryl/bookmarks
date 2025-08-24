@@ -1,0 +1,4 @@
+<header class="header">
+  <img src="/images/logo.svg" class="logo" alt="Bookmarks" />
+  <app-input-form [items]="bookmarks()" (onClickAddEvent)="addBookmark($event)" [buttonText]="constants.ADD"/>
+</header>

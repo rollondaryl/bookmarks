@@ -1,0 +1,13 @@
+@use 'theme' as *;
+
+.card {
+  padding: 16px;
+  border-radius: 4px;
+  background-color: $bg-color-white;
+  box-shadow: 0 2px 4px $box-shadow;
+
+  h2 {
+    font-size: $font-size-large;
+    margin: 0;
+  }
+}

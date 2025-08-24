@@ -1,0 +1,19 @@
+<section class="overview">
+  <app-card [title]="constants.OVERVIEW_TITLE">
+      <hr />
+      <app-list
+        [items]="slicedBookmarks()"
+        [emptyMessage]="constants.OVERVIEW_NO_BOOKMARKS_AVAILABLE"
+        (onDeleteEvent)="onClickDelete($event)"
+        (onUpdateEvent)="onClickUpdate($event)"
+      />
+      @if(bookmarks().length >= 1) {
+      <app-pagination
+        [pages]="pages()"
+        [pageSize]="pageSize()"
+        [totalPages]="totalPages()"
+        (pageChangeEvent)="pageChangeEvent($event)"
+      />
+      }
+  </app-card>
+</section>

@@ -1,0 +1,25 @@
+<div class="pagination">
+  <span
+    class="arrow"
+    [class.disabled]="activeIndex() === 0"
+    aria-label={{constants.PAGINATION_PREVIOUS_A11Y}}
+    role="button"
+    (click)="onPrevious()"
+    >{{constants.PAGINATION_PREVIOUS}}</span
+  >
+  <ul class="pages">
+    @for (page of pages(); track $index) {
+    <li [class.active]="page - 1 === activeIndex()">
+      {{ page }}
+    </li>
+    }
+  </ul>
+  <span
+    [class.disabled]="activeIndex() === totalPages() - 1"
+    aria-label={{constants.PAGINATION_NEXT_A11Y}}
+    class="arrow"
+    role="button"
+    (click)="onNext()"
+    >{{constants.PAGINATION_NEXT}}</span
+  >
+</div>

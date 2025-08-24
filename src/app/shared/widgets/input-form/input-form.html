@@ -1,0 +1,48 @@
+<section>
+  <div class="input-form">
+    <label for="url" class="visually-hidden">{{ constants.INPUT_FORM_HIDDEN_TEXT_A11Y }}</label>
+    <input
+      id="url"
+      type="text"
+      placeholder={{constants.INPUT_FORM_INPUT_PLACEHOLDER}}
+      [formControl]="item"
+      value="selectedItem()"
+    />
+    @if(!this.isEditMode()){
+    <button
+      [class.disabled]="item.invalid"
+      aria-label={{constants.INPUT_FORM_ADD_A11Y}}
+      class="input-button"
+      type="button"
+      [disabled]="item.invalid"
+      (click)="onClickAdd()"
+    >
+      {{ constants.ADD }}
+    </button>
+    } @else{
+    <button
+      [class.disabled]="item.invalid"
+      class="input-button"
+      aria-label={{constants.INPUT_FORM_UPDATE_A11Y}}
+      type="button"
+      [disabled]="item.invalid"
+      (click)="onClickUpdate()"
+    >
+      {{ constants.UPDATE }}
+    </button>
+    <button
+      class="input-button"
+      aria-label={{constants.INPUT_FORM_CANCEL_A11Y}}
+      type="button"
+      (click)="onClickCancel()"
+    >
+      {{ constants.CANCEL }}
+    </button>
+    }
+  </div>
+  @if (item.hasError('invalidUrl')) {
+  <div class="error-messages" role="alert">{{ constants.INVALID_URL }}</div>
+  } @if (item.hasError('duplicate')) {
+  <div class="error-messages" role="alert">{{ constants.DUPLICATE_URL }}</div>
+  }
+</section>

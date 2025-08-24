@@ -1,0 +1,14 @@
+<section>
+  <app-card [title]="constants.RESULTS_THANK_YOU">
+    <p>{{ newBookmark() }}</p>
+    <a
+      href="#"
+      role="button"
+      tabindex="0"
+      aria-label={{constants.RESULTS_GO_BACK_A11Y}}
+      (click)="goBack(); $event.preventDefault()"
+    >
+      {{ constants.RESULTS_GO_BACK }}
+    </a>
+  </app-card>
+</section>
